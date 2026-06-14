@@ -6,8 +6,8 @@
 
 @theme inline {
     /* ─── Fonts ─────────────────────────────────────────────────── */
-    --font-heading: var(--font-hanken-grotesk);
-    --font-sans:    var(--font-inter, var(--font-almarai));
+    --font-heading: var(--font-almarai);
+    --font-sans:    var(--font-almarai);
     --font-arabic:  var(--font-almarai);
 
     /* ─── Shadcn semantic aliases ────────────────────────────────── */

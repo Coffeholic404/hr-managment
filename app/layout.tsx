@@ -1,5 +1,6 @@
 import { Almarai } from "next/font/google"
 import { DirectionProvider } from "@/components/ui/direction"
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -10,10 +11,6 @@ const almarai = Almarai({
   display: 'swap',
   variable: '--font-almarai',
 })
-
-
-
-
 
 export default function RootLayout({
   children,
@@ -30,7 +27,9 @@ export default function RootLayout({
       <body>
         <DirectionProvider dir="rtl" direction="rtl">
         <ThemeProvider>
+          <TooltipProvider>
           {children}
+          </TooltipProvider>
           </ThemeProvider>
         </DirectionProvider>
       </body>
