@@ -1,14 +1,14 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { Almarai } from "next/font/google"
+import { DirectionProvider } from "@/components/ui/direction"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+const almarai = Almarai({
+  weight: ['300', '400', '700', '800'],
+  subsets: ['arabic'],
+  display: 'swap',
+  variable: '--font-almarai',
 })
 
 export default function RootLayout({
@@ -18,12 +18,17 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="ar"
+      dir="rtl"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
+      className={almarai.variable}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <DirectionProvider dir="rtl" direction="rtl">
+        <ThemeProvider>
+          {children}
+          </ThemeProvider>
+        </DirectionProvider>
       </body>
     </html>
   )
