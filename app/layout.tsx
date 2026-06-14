@@ -11,6 +11,10 @@ const almarai = Almarai({
   variable: '--font-almarai',
 })
 
+
+
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,7 +25,7 @@ export default function RootLayout({
       lang="ar"
       dir="rtl"
       suppressHydrationWarning
-      className={almarai.variable}
+      className={`${almarai.variable}`}
     >
       <body>
         <DirectionProvider dir="rtl" direction="rtl">
