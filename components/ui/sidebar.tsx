@@ -267,7 +267,7 @@ function SidebarTrigger({
       onClick={(event) => {
         onClick?.(event)
         toggleSidebar()
-      }}
+      }} 
       {...props}
     >
       <PanelLeftIcon className="rtl:rotate-180" />

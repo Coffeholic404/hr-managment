@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { TanStackDevtools } from "@tanstack/react-devtools"
 
 const almarai = Almarai({
   weight: ['300', '400', '700', '800'],
@@ -29,6 +30,7 @@ export default function RootLayout({
         <ThemeProvider>
           <TooltipProvider>
           {children}
+          <TanStackDevtools />
           </TooltipProvider>
           </ThemeProvider>
         </DirectionProvider>
