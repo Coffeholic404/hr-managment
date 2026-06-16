@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { StoreProvider } from "@/lib/store/StoreProvider"
 import { TanStackDevtools } from "@tanstack/react-devtools"
 
 const almarai = Almarai({
@@ -26,14 +27,16 @@ export default function RootLayout({
       className={`${almarai.variable}`}
     >
       <body>
-        <DirectionProvider dir="rtl" direction="rtl">
-        <ThemeProvider>
-          <TooltipProvider>
-          {children}
-          <TanStackDevtools />
-          </TooltipProvider>
-          </ThemeProvider>
-        </DirectionProvider>
+        <StoreProvider>
+          <DirectionProvider dir="rtl" direction="rtl">
+            <ThemeProvider>
+              <TooltipProvider>
+                {children}
+                <TanStackDevtools />
+              </TooltipProvider>
+            </ThemeProvider>
+          </DirectionProvider>
+        </StoreProvider>
       </body>
     </html>
   )
