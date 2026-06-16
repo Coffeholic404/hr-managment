@@ -7,6 +7,10 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { StoreProvider } from "@/lib/store/StoreProvider"
 import { TanStackDevtools } from "@tanstack/react-devtools"
 
+import { AppSidebar } from "@/components/app-sidebar"
+import { SiteHeader } from "@/components/site-header"
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
+
 const almarai = Almarai({
   weight: ['300', '400', '700', '800'],
   subsets: ['arabic'],
@@ -31,7 +35,20 @@ export default function RootLayout({
           <DirectionProvider dir="rtl" direction="rtl">
             <ThemeProvider>
               <TooltipProvider>
-                {children}
+                <SidebarProvider
+                  style={
+                    {
+                      "--sidebar-width": "17.5rem",
+                    } as React.CSSProperties
+                  }
+                >
+                  <AppSidebar />
+                  <SidebarInset>
+                    <SiteHeader />
+
+                    {children}
+                  </SidebarInset>
+                </SidebarProvider>
                 <TanStackDevtools />
               </TooltipProvider>
             </ThemeProvider>
