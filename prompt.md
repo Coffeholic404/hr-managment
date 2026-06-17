@@ -1,6 +1,6 @@
 
 "
-create a sign in page with user name and password using the Field shadcn component and rtk query i still don't have a extrnal backend system that gives me endpoints so just console log the values for now, and UI the same as my current styles please
+make the sidebar collabsble on desktop screen while showing only the sidebar items logs when collabsed 
 Act like a senior frontend engineer building production-grade Ul systems for a modern startup.
 Your task is to create:
 1-Reusable Ul components
