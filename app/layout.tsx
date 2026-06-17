@@ -46,7 +46,7 @@ export default function RootLayout({
                   <SidebarInset>
                     <SiteHeader />
 
-                    {children}
+                    <div className="flex-1 p-6 md:p-10">{children}</div>
                   </SidebarInset>
                 </SidebarProvider>
                 <TanStackDevtools />

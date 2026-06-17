@@ -1,23 +1,23 @@
 "use client"
 
-import { Bell, Search, Settings } from "lucide-react"
+import { Bell, Settings } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+  // import { Input } from "@/components/ui/input"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 
-const navLinks = [
-  { title: "Directory", isActive: true },
-  { title: "Assets", isActive: false },
-  { title: "Uploads", isActive: false },
-]
+// const navLinks = [
+//   { title: "Directory", isActive: true },
+//   { title: "Assets", isActive: false },
+//   { title: "Uploads", isActive: false },
+// ]
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 flex h-16 w-full items-center justify-between border-b border-outline-variant bg-card px-4 md:px-10">
       <div className="flex items-center gap-8">
-        <SidebarTrigger className="md:hidden" />
-        <h2 className="font-heading text-title-lg font-bold text-primary">
+        <SidebarTrigger />
+        {/* <h2 className="font-heading text-title-lg font-bold text-primary">
           HR Dashboard
         </h2>
         <nav className="hidden items-center gap-6 md:flex">
@@ -34,18 +34,18 @@ export function SiteHeader() {
               {link.title}
             </a>
           ))}
-        </nav>
+        </nav> */}
       </div>
 
       <div className="flex items-center gap-4">
-        <div className="relative hidden sm:block">
+        {/* <div className="relative hidden sm:block">
           <Search className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-outline" />
           <Input
             type="text"
             placeholder="Search directory..."
             className="h-9 w-64 rounded-full border-outline-variant bg-surface-container ps-9 text-body-md"
           />
-        </div>
+        </div> */}
 
         <div className="flex items-center gap-2">
           <Button
