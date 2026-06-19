@@ -96,14 +96,14 @@
     --color-on-error-container:         var(--vh-on-error-container);
 
     /* ─── Border radius ──────────────────────────────────────────── */
-    --radius-sm:   0.25rem;   /* 4px  */
-    --radius-md:   0.75rem;   /* 12px */
-    --radius-lg:   1rem;      /* 16px */
-    --radius-xl:   1.5rem;    /* 24px */
-    --radius-2xl:  2rem;
-    --radius-3xl:  2.5rem;
-    --radius-4xl:  3rem;
-    --radius-full: 9999px;
+    /* --radius-sm:   0.25rem;   4px  */
+    /* --radius-md:   0.75rem;   12px */
+    /* --radius-lg:   1rem;      16px */
+    /* --radius-xl:   1.5rem;    24px */
+    /* --radius-2xl:  2rem; */
+    /* --radius-3xl:  2.5rem; */
+    /* --radius-4xl:  3rem; */
+    /* --radius-full: 9999px; */
 
     /* ─── Typography scale ───────────────────────────────────────── */
     --text-display-lg:       3rem;       /* 48px / lh 56px */

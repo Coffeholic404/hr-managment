@@ -1,7 +1,7 @@
 import { Almarai } from "next/font/google"
 import { DirectionProvider } from "@/components/ui/direction"
 import { TooltipProvider } from "@/components/ui/tooltip"
-
+import { Toaster } from "@/components/ui/sonner"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { StoreProvider } from "@/lib/store/StoreProvider"
@@ -47,6 +47,7 @@ export default function RootLayout({
                     <SiteHeader />
 
                     <div className="flex-1 p-6 md:p-10">{children}</div>
+                    <Toaster />
                   </SidebarInset>
                 </SidebarProvider>
                 <TanStackDevtools />
