@@ -4,8 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { Toaster } from "@/components/ui/sonner"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { StoreProvider } from "@/lib/store/StoreProvider"
-import { TanStackDevtools } from "@tanstack/react-devtools"
+import { QueryProvider } from "@/lib/query/query-provider"
 
 import { AppSidebar } from "@/components/app-sidebar"
 import { SiteHeader } from "@/components/site-header"
@@ -31,7 +30,7 @@ export default function RootLayout({
       className={`${almarai.variable}`}
     >
       <body>
-        <StoreProvider>
+        <QueryProvider>
           <DirectionProvider dir="rtl" direction="rtl">
             <ThemeProvider>
               <TooltipProvider>
@@ -50,11 +49,10 @@ export default function RootLayout({
                     <Toaster />
                   </SidebarInset>
                 </SidebarProvider>
-                <TanStackDevtools />
               </TooltipProvider>
             </ThemeProvider>
           </DirectionProvider>
-        </StoreProvider>
+        </QueryProvider>
       </body>
     </html>
   )

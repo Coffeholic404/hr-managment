@@ -19,7 +19,7 @@ import {
   InputGroupButton,
   InputGroupInput,
 } from "@/components/ui/input-group"
-import { useSignInMutation } from "@/lib/store/services/authApi"
+import { useSignIn } from "@/lib/api/auth"
 
 const signInSchema = z.object({
   username: z
@@ -44,7 +44,7 @@ export function SignInForm({ className, ...props }: React.ComponentProps<"form">
   const [errors, setErrors] = React.useState<FieldErrors>({})
   const [showPassword, setShowPassword] = React.useState(false)
 
-  const [signIn, { isLoading, isSuccess }] = useSignInMutation()
+  const { mutateAsync: signIn, isPending, isSuccess } = useSignIn()
 
   const setField = (name: FieldName) => (value: string) => {
     setValues((prev) => ({ ...prev, [name]: value }))
@@ -72,7 +72,7 @@ export function SignInForm({ className, ...props }: React.ComponentProps<"form">
 
     try {
       // No backend yet — the mutation mocks the call and console.logs values.
-      await signIn(result.data).unwrap()
+      await signIn(result.data)
     } catch (error) {
       console.error("[SignInForm] sign in failed:", error)
     }
@@ -102,7 +102,7 @@ export function SignInForm({ className, ...props }: React.ComponentProps<"form">
               className="text-end"
               value={values.username}
               onChange={(e) => setField("username")(e.target.value)}
-              disabled={isLoading}
+              disabled={isPending}
               aria-invalid={!!errors.username}
               aria-describedby={errors.username ? "username-error" : undefined}
             />
@@ -128,7 +128,7 @@ export function SignInForm({ className, ...props }: React.ComponentProps<"form">
               className="text-end"
               value={values.password}
               onChange={(e) => setField("password")(e.target.value)}
-              disabled={isLoading}
+              disabled={isPending}
               aria-invalid={!!errors.password}
               aria-describedby={errors.password ? "password-error" : undefined}
             />
@@ -141,7 +141,7 @@ export function SignInForm({ className, ...props }: React.ComponentProps<"form">
                 }
                 aria-pressed={showPassword}
                 onClick={() => setShowPassword((prev) => !prev)}
-                disabled={isLoading}
+                disabled={isPending}
               >
                 {showPassword ? <EyeOff aria-hidden /> : <Eye aria-hidden />}
               </InputGroupButton>
@@ -153,9 +153,9 @@ export function SignInForm({ className, ...props }: React.ComponentProps<"form">
         </Field>
 
         <Field>
-          <Button type="submit" size="lg" disabled={isLoading}>
-            {isLoading && <Loader2 className="animate-spin" aria-hidden />}
-            {isLoading ? "جارٍ تسجيل الدخول..." : "تسجيل الدخول"}
+          <Button type="submit" size="lg" disabled={isPending}>
+            {isPending && <Loader2 className="animate-spin" aria-hidden />}
+            {isPending ? "جارٍ تسجيل الدخول..." : "تسجيل الدخول"}
           </Button>
           {isSuccess && (
             <FieldDescription className="text-primary">

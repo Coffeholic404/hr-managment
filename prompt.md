@@ -1,6 +1,6 @@
 
 "
-using shadcn field components and following tanstack form form composotion pattren create a reusable form fields e.g(input, textarea, combobox, radio checkbox, file uploader date picker ) using zod for the Validation
+instead of react rtk query, i want to use tanstack query, i have already installed it and  tanstack/eslint-plugin-query. please remove react rtk query and setup tanstack query in this project 
 Act like a senior frontend engineer building production-grade Ul systems for a modern startup.
 Your task is to create:
 1-Reusable Ul components
