@@ -1,6 +1,6 @@
 import {
   defaultShouldDehydrateQuery,
-  isServer,
+  environmentManager,
   QueryClient,
 } from "@tanstack/react-query"
 
@@ -38,7 +38,7 @@ let browserQueryClient: QueryClient | undefined
  * cache survives re-renders and Suspense boundaries.
  */
 export function getQueryClient() {
-  if (isServer) return makeQueryClient()
+  if (environmentManager.isServer()) return makeQueryClient()
   if (!browserQueryClient) browserQueryClient = makeQueryClient()
   return browserQueryClient
 }
